@@ -21,7 +21,7 @@ function collect_ratings(){
         });
 
         if(ratings.count !== 0){
-            ratings.average = (ratings.sum / ratings.count).toFixed();
+            ratings.average = (ratings.sum / ratings.count).toFixed(2);
         }
         console.log("First project!!!!");
 
@@ -31,9 +31,8 @@ function collect_ratings(){
 
     document.addEventListener('change', function(){
         const ratings = collect_ratings();
-        const final_val = document.querySelector("#average");
-        final_val.value = ratings.average;
-        console.log (final_val.value); 
+        document.querySelector('#average').value = ratings.average.toFixed(2);
+        
        
     
     });
